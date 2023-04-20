@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ui/ApplicationBar/ApplicationBar.qml</file>
+        <file>ui/ApplicationSpace/ApplicationSpace.qml</file>
+        <file>ui/ApplicationSystemTrayIcon/ApplicationSystemTrayIcon.qml</file>
+        <file>ui/ApplicationBar/ApplicationBar_kopia.qml</file>
+        <file>ui/Values/Values.qml</file>
+    </qresource>
+    <qresource prefix="/assets">
+        <file>ui/assets/background.jpg</file>
+        <file>ui/assets/logo.ico</file>
+        <file>ui/assets/logov3.png</file>
+        <file>ui/assets/settings.png</file>
+        <file>ui/assets/info.png</file>
+        <file>ui/assets/close.afphoto.png</file>
+        <file>ui/assets/maximize.afphoto.png</file>
+        <file>ui/assets/minimize.afphoto.png</file>
+        <file>ui/assets/restore.afphoto.png</file>
+    </qresource>
+</RCC>
