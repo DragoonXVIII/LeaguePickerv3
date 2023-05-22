@@ -13,7 +13,6 @@ import "ui/Values"
 
 
 ApplicationWindow
-//Window
 {
 
     id: mainWindow
@@ -70,54 +69,35 @@ ApplicationWindow
             }
         }
     }
-//============================================================================================
+
+    Rectangle
+    {
+        id: appSpaceborder
+        anchors.fill: parent
+        z: 1 //over everything else overlay (custom frame)
+        color: "transparent"
+        border
+        {
+            color: values.colorBar
+            width: 2
+        }
+        radius: 6
+    }
 
     ApplicationSystemTrayIcon
     {
         id :applicationSystemTrayIcon
     }
 
- //============================================================================================
-
-    Rectangle
+    ApplicationSpace
     {
-        id: appRectangle
-        width: parent.width
-        height: parent.height
-        anchors.fill: parent
-        color: "transparent"
-        clip: true
-
-        Rectangle
-        {
-            id: appSpaceborder
-            anchors.fill: parent
-            z: 1 //over everything else overlay (custom frame)
-            color: "transparent"
-            border
-            {
-                color: values.colorBar
-                width: 2
-            }
-            radius: 6
-            clip: true
-
-        }
-
-        ApplicationSpace
-        {
-            id:applicationSpace
-        }
-        ApplicationBar
-        {
-            id: applicationBar
-        }
+        id:applicationSpace
     }
-
-    /*ApplicationBar
+    ApplicationBar
     {
         id: applicationBar
-    }*/
+    }
+
 }
 
 /*onVisibleChanged:

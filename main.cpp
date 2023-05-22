@@ -1,15 +1,29 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QIcon>
+
+
+#include "runesimporter.h"
+//#include "console.h"
+
+
 
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-    QGuiApplication app(argc, argv);
+
+    //console.log("SSL");
+
+    RunesImporter *importer = new RunesImporter;
+
+    QGuiApplication app(argc, argv);  
 
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("runesimporter",importer);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

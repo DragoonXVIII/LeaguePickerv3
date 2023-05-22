@@ -4,18 +4,24 @@
         <file>ui/ApplicationBar/ApplicationBar.qml</file>
         <file>ui/ApplicationSpace/ApplicationSpace.qml</file>
         <file>ui/ApplicationSystemTrayIcon/ApplicationSystemTrayIcon.qml</file>
-        <file>ui/ApplicationBar/ApplicationBar_kopia.qml</file>
         <file>ui/Values/Values.qml</file>
     </qresource>
     <qresource prefix="/assets">
         <file>ui/assets/background.jpg</file>
         <file>ui/assets/logo.ico</file>
         <file>ui/assets/logov3.png</file>
-        <file>ui/assets/settings.png</file>
-        <file>ui/assets/info.png</file>
-        <file>ui/assets/close.afphoto.png</file>
-        <file>ui/assets/maximize.afphoto.png</file>
-        <file>ui/assets/minimize.afphoto.png</file>
-        <file>ui/assets/restore.afphoto.png</file>
+        <file>ui/assets/basicWindowNavigation/closeDefault.png</file>
+        <file>ui/assets/basicWindowNavigation/closeHovered.png</file>
+        <file>ui/assets/basicWindowNavigation/closePressed.png</file>
+        <file>ui/assets/basicWindowNavigation/maximizeDefault.png</file>
+        <file>ui/assets/basicWindowNavigation/maximizeHovered.png</file>
+        <file>ui/assets/basicWindowNavigation/minimizeDefault.png</file>
+        <file>ui/assets/basicWindowNavigation/minimizeHoveredpng.png</file>
+        <file>ui/assets/basicWindowNavigation/restoreDefault.png</file>
+        <file>ui/assets/basicWindowNavigation/restoreHovered.png</file>
+        <file>ui/assets/extraWindowNavigation/infoDefault.png</file>
+        <file>ui/assets/extraWindowNavigation/infoHovered.png</file>
+        <file>ui/assets/extraWindowNavigation/settingsDefault.png</file>
+        <file>ui/assets/extraWindowNavigation/settingsHovered.png</file>
     </qresource>
 </RCC>

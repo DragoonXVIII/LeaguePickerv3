@@ -70,22 +70,77 @@ Rectangle
             spacing: 12
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            Image
+
+            Button
             {
-                id: about
-                anchors.verticalCenter: parent.verticalCenter
-                source: "qrc:/assets/ui/assets/info.png"
-                width: 24
-                height: 24
+                id: infoButton
+                height: 36
+                width: 36
+                background: Rectangle
+                {
+                    color: "transparent"
+                    anchors.fill: parent
+                    Image
+                    {
+                        id: infoButtonImg
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: values.sourceDefaultInfoButton
+                        width: 24
+                        height: 24
+                    }
+                }
+                onClicked:
+                {
+                    console.log("infoButton clicked")
+                }
+                onHoveredChanged:
+                {
+                    if(hovered)
+                    {
+                        infoButtonImg.source = values.sourceHoveredInfoButton
+                    }
+                    else
+                    {
+                        infoButtonImg.source = values.sourceDefaultInfoButton
+                    }
+                }
             }
 
-            Image
+            Button
             {
-                id: settings
-                anchors.verticalCenter: parent.verticalCenter
-                source: "qrc:/assets/ui/assets/settings.png"
-                width: 24
-                height: 24
+                id: settingsButton
+                height: 36
+                width: 36
+                background: Rectangle
+                {
+                    color: "transparent"
+                    anchors.fill: parent
+                    Image
+                    {
+                        id: settingsButtonImg
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: values.sourceDefaultSettingsButton
+                        width: 24
+                        height: 24
+                    }
+                }
+                onClicked:
+                {
+                    console.log("settingsButton clicked")
+                }
+                onHoveredChanged:
+                {
+                    if(hovered)
+                    {
+                        settingsButtonImg.source = values.sourceHoveredSettingsButton
+                    }
+                    else
+                    {
+                        settingsButtonImg.source = values.sourceDefaultSettingsButton
+                    }
+                }
             }
         }
 
@@ -96,35 +151,58 @@ Rectangle
 
             Button
             {
-                id: minimize
+                id: minimizeButton
                 height: 36
                 width: 46
-                background: Image
+                background: Rectangle
                 {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    source: "qrc:/assets/ui/assets/minimize.afphoto.png"
-                    width: 10
-                    height: 10
+                    color: "transparent"
+                    anchors.fill: parent
+                    Image
+                    {
+                        id: minimizeButtonImg
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: values.sourceDefaultMinimizeButton
+                        width: 10
+                        height: 10
+                    }
                 }
                 onClicked:
                 {
                     mainWindow.showMinimized()
                 }
+                onHoveredChanged:
+                {
+                    if(hovered)
+                    {
+                        minimizeButtonImg.source = values.sourceHoveredMinimizeButton
+                    }
+                    else
+                    {
+                        minimizeButtonImg.source = values.sourceDefaultMinimizeButton
+                    }
+                }
             }
 
             Button
             {
-                id: maximize
+                id: maximizeButton
                 height: 36
                 width: 46
-                background: Image
+                background: Rectangle
                 {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    source: "qrc:/assets/ui/assets/maximize.afphoto.png"
-                    width: 10
-                    height: 10
+                    color: "transparent"
+                    anchors.fill: parent
+                    Image
+                    {
+                        id:maximizeButtonImg
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: values.sourceDefaultMaximizeButton
+                        width: 10
+                        height: 10
+                    }
                 }
                 onClicked:
                 {
@@ -139,25 +217,62 @@ Rectangle
                         mainWindow.showMaximized()
                     }
                 }
+                onHoveredChanged:
+                {
+                    if(hovered)
+                    {
+                        maximizeButtonImg.source = values.sourceHoveredMaximizeButton
+                    }
+                    else
+                    {
+                        maximizeButtonImg.source = values.sourceDefaultMaximizeButton
+                    }
+                }
             }
 
             Button
             {
-                id: close
+                id: closeButton
                 height: 36
                 width: 46
-                background: Image
+                background: Rectangle
                 {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    source: "qrc:/assets/ui/assets/close.afphoto.png"
-                    width: 10
-                    height: 10
+                    color: "transparent"
+                    anchors.fill: parent
+                    Image
+                    {
+                        id: closeButtonImg
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: values.sourceDefaultCloseButton
+                        width: 10
+                        height: 10
+                        cache: false
+                    }
                 }
                 onClicked:
                 {
-                    mainWindow.windowVisible  = 0
+                    mainWindow.windowVisible = 0
                     mainWindow.hide()
+                }
+                onPressed:
+                {
+                    closeButtonImg.source = values.sourcePressedCloseButton
+                }
+                onReleased:
+                {
+                    closeButtonImg.source = values.sourceDefaultCloseButton
+                }
+                onHoveredChanged:
+                {
+                    if(hovered)
+                    {
+                        closeButtonImg.source = values.sourceHoveredCloseButton
+                    }
+                    else
+                    {
+                        closeButtonImg.source = values.sourceDefaultCloseButton
+                    }
                 }
             }
         }

@@ -12,31 +12,20 @@ Rectangle
 {
     id: applicationSpace
     z:0
-    width: mainWindow.width
-    height: mainWindow.height
+    width: parent.width
+    height: parent.height
     anchors.fill: parent
     color: "transparent"
-    border
-    {
-        width: 1
-        color: "#808080"
-    }
     radius: 6
     layer.enabled: true
-    clip:  true
 
     Image
     {
         id: background
         source: "qrc:/assets/ui/assets/background.jpg"
-        //fillMode: Image.PreserveAspectFit
-        width: parent.width - (appSpaceborder.border.width * 2)
-        height: parent.height - (appSpaceborder.border.width * 2)
+        width: parent.width - (parent.border.width * 4)
+        height: parent.height - (parent.border.width * 4)
         anchors.centerIn: parent
-
-        smooth: true
-        sourceSize.height: background.height
-        sourceSize.width: background.width
         visible: true
     }
 
@@ -47,22 +36,31 @@ Rectangle
         color: "#80000000"
     }
 
+    /*Rectangle
+    {
+        id: menu
+        width: 220
+        height: parent.height
+        radius: 6
+        color: values.colorDefaultMenu
+    }*/
+
     Button
     {
+        id:testButton
         width: 128
         height: 64
         anchors.centerIn: parent
         onClicked:
         {
-            console.log("no elo ziomeczku to znowu ja bogaj")
+            runesimporter.greet("testing button z greetem")
         }
 
         Rectangle
         {
             width: parent.width
             height: parent.height
-            color: "#808080"
-            radius: 6
+            color: "blue"
             border.color: "purple"
             border.width: 3
             Text
